@@ -9,10 +9,9 @@ export default function App() {
   const [input, setInput] = useState('');
   const keyword = useDebounce(input.trim().toLowerCase(), 300);
   const { pokemon, status } = usePokemonSearch(keyword);
-  const { list, count } = usePokemonList(20, offset);
   const [page, setPage] = useState(0);
   const offset = page * 20;
-  
+  const { list, count } = usePokemonList(20, offset);
 
   return (
     <main>
